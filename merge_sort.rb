@@ -8,4 +8,10 @@ def merge_sorted_array(a, b)
   end
 end
 
-p merge_sorted_array([1, 4, 5, 7], [2, 3, 8, 9])
+def merge(arr)
+  return arr if arr.length < 2
+
+  merge_sorted_array(merge(arr.slice(0, arr.length / 2)), merge(arr.slice(arr.length / 2, arr.length)))
+end
+
+p merge [4, 3, 2, 1]
